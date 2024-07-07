@@ -15,14 +15,12 @@ public class APIEventController {
 
     @GetMapping("/events")
     public List<String> getEvents() {
-        throw new GeneralException("테스트 메시지");
-//        return List.of("event1", "event2");
+        return List.of("event1", "event2");
     }
 
     @PostMapping("/events")
     public Boolean createEvent() {
-        throw new RuntimeException("runtime 테스트 메시지");
-//        return true;
+        return true;
     }
 
     @GetMapping("/events/{eventId}")
