@@ -15,21 +15,18 @@ import java.util.List;
 public class APIEventController {
 
     @GetMapping("/events")
-    public List<String> getEvents() throws Exception{
-        throw new HttpRequestMethodNotSupportedException("GET");
-//        return List.of("event1", "event2");
+    public List<String> getEvents(){
+        return List.of("event1", "event2");
     }
 
     @PostMapping("/events")
     public Boolean createEvent() {
-        throw new GeneralException("장군님");
-//        return true;
+        return true;
     }
 
     @GetMapping("/events/{eventId}")
     public String getEvent(@PathVariable Integer eventId) {
-        throw new RuntimeException("런타임 에러");
-//        return "event " + eventId;
+        return "event " + eventId;
     }
 
     @PutMapping("/events/{eventId}")
