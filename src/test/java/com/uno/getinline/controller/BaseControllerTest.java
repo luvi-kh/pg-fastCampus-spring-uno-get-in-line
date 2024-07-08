@@ -22,16 +22,16 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class BaseControllerTest {
 
 //    @Autowired
-//    private final MockMvc mvc;
+    private final MockMvc mvc;
 
 
-//    public BaseControllerTest(@Autowired MockMvc mvc) {
-//        this.mvc = mvc;
-//    }
+    public BaseControllerTest(@Autowired MockMvc mvc) {
+        this.mvc = mvc;
+    }
 
     @DisplayName("[view][GET] 기본 페이지 요청")
     @Test
-    void givenNothing_whenRequestingRootPage_thenReturnsIndexPage(@Autowired MockMvc mvc) throws Exception {
+    void givenNothing_whenRequestingRootPage_thenReturnsIndexPage() throws Exception {
         // Given
 
 
