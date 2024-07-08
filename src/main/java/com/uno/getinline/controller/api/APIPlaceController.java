@@ -1,5 +1,8 @@
 package com.uno.getinline.controller.api;
 
+import com.uno.getinline.constant.PlaceType;
+import com.uno.getinline.dto.APIDataResponse;
+import com.uno.getinline.dto.PlaceDTO;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -9,8 +12,15 @@ import java.util.List;
 public class APIPlaceController {
 
     @GetMapping("/places")
-    public List<String> getPlaces() {
-        return List.of("place1", "place2");
+    public APIDataResponse <List<PlaceDTO>> getPlaces() {
+        return APIDataResponse.of(List.of(PlaceDTO.of(
+                PlaceType.COMMON,
+                "랄라배드민턴장",
+                "서울시 강남구 강남대로 1234",
+                "010-1234-5678",
+                30,
+                "신장개업"
+        )));
     }
 
     @PostMapping("/places")
