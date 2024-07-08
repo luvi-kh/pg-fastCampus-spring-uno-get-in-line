@@ -29,8 +29,19 @@ public class APIPlaceController {
     }
 
     @GetMapping("/places/{placeId}")
-    public String getPlace(@PathVariable Integer placeId) {
-        return "place " + placeId;
+    public APIDataResponse<PlaceDTO> getPlace(@PathVariable Integer placeId) {
+        if(placeId.equals(2)){
+            return APIDataResponse.of(null);
+        }
+
+        return APIDataResponse.of(PlaceDTO.of(
+                PlaceType.COMMON,
+                "랄라배드민턴장",
+                "서울시 강남구 강남대로 1234",
+                "010-1234-5678",
+                30,
+                "신장개업"
+        ));
     }
 
     @PutMapping("/places/{placeId}")
