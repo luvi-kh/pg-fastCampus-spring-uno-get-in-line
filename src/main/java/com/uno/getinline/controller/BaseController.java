@@ -1,14 +1,14 @@
 package com.uno.getinline.controller;
 
-import com.uno.getinline.exception.GeneralException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class BaseController  {
+public class BaseController {
 
     @GetMapping("/")
-    public String root(){
+    public String root() {
         return "index";
     }
+
 }

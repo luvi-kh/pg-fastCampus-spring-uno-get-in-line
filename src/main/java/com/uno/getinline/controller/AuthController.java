@@ -15,4 +15,5 @@ public class AuthController {
     public String signUp() {
         return "auth/sign-up";
     }
+
 }
