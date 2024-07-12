@@ -18,6 +18,7 @@ public record EventRequest(
         @NotNull @Positive Integer capacity,
         String memo
 ) {
+
     public static EventRequest of(
             Long placeId,
             String eventName,
@@ -54,4 +55,5 @@ public record EventRequest(
                 null
         );
     }
+
 }

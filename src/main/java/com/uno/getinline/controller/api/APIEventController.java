@@ -53,7 +53,7 @@ public class APIEventController {
     }
 
     @GetMapping("/events/{eventId}")
-    public APIDataResponse<EventResponse> getEvent(@PathVariable Long eventId) {
+    public APIDataResponse<EventResponse> getEvent(@Positive @PathVariable Long eventId) {
         EventResponse eventResponse = EventResponse.from(eventService.getEvent(eventId).orElse(null));
 
         return APIDataResponse.of(eventResponse);
@@ -61,15 +61,15 @@ public class APIEventController {
 
     @PutMapping("/events/{eventId}")
     public APIDataResponse<String> modifyEvent(
-            @PathVariable Long eventId,
-            @RequestBody EventRequest eventRequest
+            @Positive @PathVariable Long eventId,
+            @Valid @RequestBody EventRequest eventRequest
     ) {
         boolean result = eventService.modifyEvent(eventId, eventRequest.toDTO());
         return APIDataResponse.of(Boolean.toString(result));
     }
 
     @DeleteMapping("/events/{eventId}")
-    public APIDataResponse<String> removeEvent(@PathVariable Long eventId) {
+    public APIDataResponse<String> removeEvent(@Positive @PathVariable Long eventId) {
         boolean result = eventService.removeEvent(eventId);
 
         return APIDataResponse.of(Boolean.toString(result));
