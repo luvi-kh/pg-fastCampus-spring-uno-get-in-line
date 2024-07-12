@@ -2,7 +2,7 @@
 <thlogic>
     <attr sel="#eventsTitle" th:text="'이벤트 목록'" />
     <attr sel="#eventsTable">
-        <attr sel="tbody">
+        <attr sel="tbody" th:remove="all-but-first">
             <attr sel="tr[0]" th:each="event : ${events}">
                 <attr sel="td.placeId" th:text="${event.placeId}" />
                 <attr sel="td.eventName" th:text="${event.eventName}" />
